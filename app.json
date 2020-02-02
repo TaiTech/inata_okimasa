@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "IkkyuMenu",
-    "slug": "IkkyuMenu",
+    "name": "いなたおきまさ",
+    "slug": "inata-okimasa",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -24,7 +24,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "jp.gr.java-conf.taitech.inata-okimasa",
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-9015913348050296~8257620930"
+      }
+    },
+    "android": {
+      "package": "jp.gr.java_conf.taitech.inata_okimasa",
+      "permissions": [],
+      "config":{
+        "googleMobileAdsAppId": "ca-app-pub-9015913348050296~8257620930"
+      },
+      "adaptiveIcon": {
+        "backgroundColor": "#feff00ff",
+        "foregroundImage": "./assets/images/icon.png"
+      }
     }
   }
 }

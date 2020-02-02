@@ -13,7 +13,7 @@ import {
 import { Button } from 'react-native-elements';
 import Modal from "react-native-modal";
 import { MonoText } from '../components/StyledText';
-import CountdownCircle from 'react-native-countdown-circle'
+import { AdMobBanner } from 'expo-ads-admob';
 
 
 export default function HomeScreen() {
@@ -41,7 +41,11 @@ export default function HomeScreen() {
                  'フルーツサワー', 'カクテル', '梅酒', '白ワイン', '赤ワイン', '芋焼酎', '麦焼酎', '白水!!!', '白水!!!',
                  '白水!!!', 'ささいなた!!', 'ささいなた!!', '日本酒1合!', '日本酒2合!!', 'おきまさ',
                  '逃げのソフトドリンク', '右隣の人と日本酒1合ずつ', 'ジャンボコロッケ'];
-  const nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4, 5];
+  const nums = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                3, 3, 3, 3,
+                4, 
+                5];
   const min = 0;
   const max = menus.length - 1;
   const rand = Math.floor(min + Math.random(9) * (max - min));
@@ -82,7 +86,7 @@ export default function HomeScreen() {
             buttonStyle={{
               backgroundColor:'blue',
               marginTop: 10,
-              marginBottom: 50,
+              marginBottom: 0,
             }}
             onPress={() => handleStartNum()}
           />
@@ -116,6 +120,14 @@ export default function HomeScreen() {
           </View>
         </Modal>
       </ScrollView>
+      <AdMobBanner
+      bannerSize="fullBanner"
+      adUnitID="ca-app-pub-9015913348050296/4318375924" // Test ID, Replace with your-admob-unit-id
+      // ca-app-pub-9015913348050296/4318375924  admob unit id
+      // ca-app-pub-3940256099942544/6300978111  test id
+      // testDeviceID="EMULATOR"
+      servePersonalizedAds// true or false
+      onDidFailToReceiveAdWithError={() => (console.log("error to receive ad"))} />
       {/* <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
